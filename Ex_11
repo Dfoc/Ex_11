@@ -1,0 +1,36 @@
+#Noam Duvdevani
+#This code is to enter the dish and the price
+menu=[]
+for i in range(10):
+    dish_name = input("Enter the dish name: ")
+    dish_price = float(input("Enter the dish price: "))
+    menu.append((dish_name, dish_price))
+#The most expansive dishes we found so far
+expensive_dish_name = ""
+expensive_dish_price = 0
+
+#This loop find the highest price and checking every dish price and name
+for dish in menu:
+    if dish[1] > expensive_dish_price:
+        expensive_dish_name = dish[0]
+        expensive_dish_price = dish[1]
+
+#This is printing the most expensive dish and his name
+print("Most expensive dish:", expensive_dish_name, "with price:", expensive_dish_price)
+
+#This code find the avg of all the dishes
+total_price = 0
+for dish in menu:
+    total_price += dish[1]
+
+avg = total_price / 10
+print("Average price of a dish:", avg)
+
+#This code print the dishes that are bigger then the average price
+dish_price_higher_than_avg = []
+
+for dish in menu:
+    if avg < dish[1]:
+        dish_price_higher_than_avg.append(dish[0])
+
+print("Bigger then average price",dish_price_higher_than_avg)
